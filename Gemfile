@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'sinatra'
+gem 'pusher'
+gem 'dotenv'
+gem 'pry'
+gem 'sinatra-cross_origin'
