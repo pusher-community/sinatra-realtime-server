@@ -10,6 +10,10 @@ Pusher.app_id = ENV["PUSHER_APP_ID"]
 Pusher.key = ENV["PUSHER_APP_KEY"]
 Pusher.secret = ENV["PUSHER_APP_SECRET"]
 
+get '/ping' do
+  'PONG'
+end
+
 post '/messages' do
   cross_origin
   Pusher.trigger('messages', 'new_message', {
