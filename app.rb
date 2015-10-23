@@ -1,13 +1,14 @@
 require 'sinatra'
-require 'pry'
-require 'json'
+require 'sinatra/cross_origin'
+
 require 'pusher'
 require 'dotenv'
-require 'sinatra/cross_origin'
 
 Dotenv.load
 
-Pusher.url = ENV['PUSHER_URL']
+Pusher.app_id = ENV["PUSHER_APP_ID"]
+Pusher.key = ENV["PUSHER_APP_KEY"]
+Pusher.secret = ENV["PUSHER_APP_SECRET"]
 
 post '/messages' do
   cross_origin
