@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/cross_origin'
+require 'rack/utils'
 
 require 'pusher'
 require 'dotenv'
@@ -17,8 +18,8 @@ end
 post '/messages' do
   cross_origin
   Pusher.trigger('messages', 'new_message', {
-    text: @params["text"],
-    username: @params["username"],
-    time: @params["time"]
+    text: Rack::Utils.escape_html(@params["text"]),
+    username: Rack::Utils.escape_html(@params["username"]),
+    time: Rack::Utils.escape_html(@params["time"])
   })
 end
