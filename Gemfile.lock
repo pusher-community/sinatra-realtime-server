@@ -10,6 +10,8 @@ GEM
       pusher-signature (~> 0.1.8)
     pusher-signature (0.1.8)
     rack (1.6.4)
+    rack-parser (0.6.1)
+      rack
     rack-protection (1.5.3)
       rack
     sinatra (1.4.6)
@@ -25,6 +27,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   pusher
+  rack-parser
   sinatra
   sinatra-cross_origin
 

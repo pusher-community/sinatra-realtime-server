@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'json'
 require 'sinatra/cross_origin'
 require 'rack/utils'
 
@@ -22,4 +23,14 @@ post '/messages' do
     username: Rack::Utils.escape_html(@params["username"]),
     time: Rack::Utils.escape_html(@params["time"])
   })
+end
+
+options "*" do
+  response.headers["Allow"] = "HEAD,GET,PUT,POST,DELETE,OPTIONS"
+
+  response.headers["Access-Control-Allow-Origin"] = "*"
+
+  response.headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Cache-Control, Accept"
+
+  200
 end
