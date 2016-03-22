@@ -10,6 +10,8 @@ First, install all dependencies:
 bundle install
 ```
 
+Then create a `.env` file with your pusher credentials (see `.env.example` for keys).
+
 Then run the app:
 
 ```
