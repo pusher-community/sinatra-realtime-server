@@ -19,3 +19,7 @@ bundle exec ruby app.rb
 ```
 
 And you can then `POST` to `http://localhost:4567/messages`.
+
+```
+curl http://localhost:4567/messages --data 'time=0&username=foo&text=bar'
+```
