@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     dotenv (2.0.2)
+    git-version-bump (0.15.1)
     httpclient (2.6.0.1)
     multi_json (1.11.2)
     pusher (0.14.6)
@@ -10,6 +11,9 @@ GEM
       pusher-signature (~> 0.1.8)
     pusher-signature (0.1.8)
     rack (1.6.4)
+    rack-contrib (1.4.0)
+      git-version-bump (~> 0.15)
+      rack (~> 1.4)
     rack-parser (0.6.1)
       rack
     rack-protection (1.5.3)
@@ -27,9 +31,10 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   pusher
+  rack-contrib
   rack-parser
   sinatra
   sinatra-cross_origin
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
