@@ -2,11 +2,14 @@ require 'sinatra'
 require 'json'
 require 'sinatra/cross_origin'
 require 'rack/utils'
+require 'rack/contrib'
 
 require 'pusher'
 require 'dotenv'
 
 Dotenv.load
+
+use Rack::PostBodyContentTypeParser
 
 Pusher.app_id = ENV["PUSHER_APP_ID"]
 Pusher.key = ENV["PUSHER_APP_KEY"]
